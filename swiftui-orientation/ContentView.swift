@@ -1,21 +1,16 @@
-//
-//  ContentView.swift
-//  swiftui-orientation
-//
-//  Created by Mark Volkmann on 5/4/22.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var model: Model
+    
     var body: some View {
-        Text("Hello, world!")
+        Text("Orientation is \(model.orientationText)")
             .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(Model())
     }
 }
